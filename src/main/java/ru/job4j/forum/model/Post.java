@@ -10,17 +10,26 @@ public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     private String name;
+
     private String description;
+
     private Calendar created;
 
-    public static Post of(String name) {
-        Post post = new Post();
-        post.name = name;
-        return post;
-    }
+    @ManyToOne
+    private Topic topic;
 
-    public Post() {
+    @ManyToOne
+    private User creator;
+
+    public static Post of(int id, String name, String desc) {
+        Post post = new Post();
+        post.id = id;
+        post.name = name;
+        post.description = desc;
+        post.created = Calendar.getInstance();
+        return post;
     }
 
     public int getId() {
@@ -43,8 +52,8 @@ public class Post {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDescription(String desc) {
+        this.description = desc;
     }
 
     public Calendar getCreated() {
@@ -53,6 +62,22 @@ public class Post {
 
     public void setCreated(Calendar created) {
         this.created = created;
+    }
+
+    public Topic getTopic() {
+        return topic;
+    }
+
+    public void setTopic(Topic topic) {
+        this.topic = topic;
+    }
+
+    public User getCreator() {
+        return creator;
+    }
+
+    public void setCreator(User creator) {
+        this.creator = creator;
     }
 
     @Override
@@ -64,14 +89,11 @@ public class Post {
             return false;
         }
         Post post = (Post) o;
-        return id == post.id
-                && Objects.equals(name, post.name)
-                && Objects.equals(description, post.description)
-                && Objects.equals(created, post.created);
+        return id == post.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, created);
+        return Objects.hash(id);
     }
 }
