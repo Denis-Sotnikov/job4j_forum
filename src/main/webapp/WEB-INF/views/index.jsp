@@ -18,12 +18,11 @@
     <title>Forum</title>
 </head>
 <body>
-<div class="container mt-3">
-<div class="dark" style="width: 100%">
+<div class="container pt-1">
     <div class="row">
         <ul class="nav">
             <li class="nav-item" style="font-weight: bold">
-                <a class="nav-link" href="<c:url value="/topics/create"/>">Добавить тему</a>
+                <a class="nav-link" href="<c:url value="/topic/create"/>">Добавить тему</a>
             </li>
         </ul>
         <ul class="nav">
@@ -36,30 +35,43 @@
                 <a class="nav-link" href="<c:url value="/login"/>">Войти</a>
             </li>
         </ul>
-</div>
     </div>
     <div class="row">
-        <ul class="nav">
-            <li class="nav-item" style="font-weight: bold">
-                <h4 class="nav-link">Форум job4j</h4>
-            </li>
-        </ul>
-    </div>
-    <div class="row">
-        <table class="table">
-            <thead>
-            <tr>
-                <th scope="col">Тема</th>
-            </tr>
-            </thead>
-            <tbody>
-            <c:forEach items="${posts}" var="post">
-                <tr>
-                    <td><c:out value="${post.name}"/></td>
-                </tr>
-            </c:forEach>
-            </tbody>
-        </table>
+        <div class="card" style="width: 100%">
+            <div class="card-header" style="font-weight: bold; font-size: larger">
+                Форум job4j
+            </div>
+            <div class="card-body">
+                <table class="table table-striped, table-bordered">
+                    <thead>
+                    <tr>
+                        <th scope="col">Название</th>
+                        <th scope="col">Автор</th>
+                        <th scope="col">Статус</th>
+                        <th scope="col">Количество сообщений</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <c:forEach items="${topics}" var="topic">
+                        <tr>
+                            <td>
+                                <a href="${pageContext.request.contextPath}/post?id=${topic.id}">${topic.name}</a>
+                            </td>
+                            <td>
+                                <c:out value="${topic.author.username}"/>
+                            </td>
+                            <td>
+                                <c:out value="${topic.status.text}"/>
+                            </td>
+                            <td>
+                                <c:out value="${topic.posts.size()}"/>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </div>
 </body>

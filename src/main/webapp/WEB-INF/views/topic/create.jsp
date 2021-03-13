@@ -18,23 +18,26 @@
     <title>Forum</title>
 </head>
 <body>
-<div class="container pt-3">
+<div class="container pt-1">
     <div class="row">
-        <div class="card" style="width: 40%">
-            <div class="card-header">
-                Регистрация
+        <div class="card" style="width: 100%">
+            <div class="card-header" style="font-weight: bold; font-size: larger">
+                Форма для создания темы обсуждения
             </div>
-            <div class="card-body" style="font-weight: bold; font-size: larger">
-                <form action="<c:url value="/reg"/>" method="post">
-                    <div class="form-group">
-                        <label for="username" style="font-weight: bold">Логин: </label>
-                        <input type="text" class="form-control" name="username" id="username" placeholder="Введите ваш логин..." required>
+            <div class="card-body">
+                <form action="<c:url value='/topic/save'/>" method='POST'>
+                    <div class="form-group row">
+                        <label class="col-form-label col-sm-3" for="name" style="font-weight: 900">Имя обсуждения</label>
+                        <div class="col-sm-5">
+                            <input type='text' class="form-control" name='name' id="name">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="password" style="font-weight: bold">Пароль: </label>
-                        <input type="text" class="form-control" name="password" id="password" placeholder="Введите ваш пароль..." required>
+                    <div class="form-group row">
+                        <label class="col-form-label col-sm-3" style="font-weight: 900"></label>
+                        <div class="col-sm-5">
+                            <button type="submit" class="btn btn-dark">Добавить</button>
+                        </div>
                     </div>
-                    <input name="submit" type="submit" class="btn btn-primary" value="Зарегистрироваться"/>
                 </form>
             </div>
         </div>

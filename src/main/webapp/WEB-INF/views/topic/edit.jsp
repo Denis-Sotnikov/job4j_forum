@@ -22,29 +22,33 @@
     <div class="row">
         <div class="card" style="width: 100%">
             <div class="card-header" style="font-weight: bold; font-size: larger">
-                Форма для создания поста обсуждения
+                Форма для редактирования темы обсуждения
             </div>
             <div class="card-body">
-                <form action="<c:url value='/save'/>" method='POST'>
+                <form action="<c:url value='/topic/save'/>" method='POST'>
                     <div class="form-group row">
                         <label class="col-form-label col-sm-3" for="name" style="font-weight: 900">Имя обсуждения</label>
                         <div class="col-sm-5">
-                            <input type='text' class="form-control" name='name' id="name">
+                            <input type='text' class="form-control" name='name' id="name" value="${topic.name}">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-form-label col-sm-3" for="description" style="font-weight: 900">Текст обсуждения</label>
+                        <label class="col-form-label col-sm-3" for="status" style="font-weight: 900">Статус обсуждения</label>
                         <div class="col-sm-5">
-                            <input type='text' class="form-control" name='description' id="description">
+                            <select class="form-control" name="status" id="status" >
+                                <c:forEach var="st" items="${status}">
+                                    <option value="${st}">${st.text}</option>
+                                </c:forEach>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <input type="hidden" name="topic_id" value="${topic_id}">
+                        <input type="hidden" name="id" value="${topic.id}">
                     </div>
                     <div class="form-group row">
                         <label class="col-form-label col-sm-3" style="font-weight: 900"></label>
                         <div class="col-sm-5">
-                            <button type="submit" class="btn btn-dark">Добавить</button>
+                            <button type="submit" class="btn btn-dark">Изменить</button>
                         </div>
                     </div>
                 </form>
