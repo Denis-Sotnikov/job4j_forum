@@ -33,7 +33,7 @@ public class ForumService {
     }
 
     public Topic findById(int id) {
-        return tRep.findTopic_PostsById(id);
+        return tRep.findTopicPostsById(id);
     }
 
     @Transactional
@@ -56,7 +56,7 @@ public class ForumService {
     }
 
     public Post postFindById(int id) {
-        return pRep.findPost_TopicById(id);
+        return pRep.findPostTopicById(id);
     }
 
     public User uFindByUsername(String username) {

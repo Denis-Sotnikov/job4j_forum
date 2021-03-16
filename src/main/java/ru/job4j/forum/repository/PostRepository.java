@@ -7,7 +7,7 @@ import ru.job4j.forum.model.Post;
 
 public interface PostRepository extends CrudRepository<Post, Integer> {
 
-    Post findPost_TopicById(int id);
+    Post findPostTopicById(int id);
 
     @Modifying
     @Query("update Post as p set p.name = ?1, p.description = ?2 where p.id = ?3")

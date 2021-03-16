@@ -13,7 +13,7 @@ public interface TopicRepository extends CrudRepository<Topic, Integer> {
     @Query("select distinct t from Topic t join fetch t.author")
     List<Topic> findAllTopics();
 
-    Topic findTopic_PostsById(int id);
+    Topic findTopicPostsById(int id);
 
     @Modifying
     @Query("update Topic as t set t.name = ?1, t.status = ?2 where t.id = ?3")
