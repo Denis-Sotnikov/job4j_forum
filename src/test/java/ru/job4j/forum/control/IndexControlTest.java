@@ -13,7 +13,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
-@SuppressWarnings("checkstyle:methodlength")
 @SpringBootTest(classes = Main.class)
 @AutoConfigureMockMvc
 public class IndexControlTest {
