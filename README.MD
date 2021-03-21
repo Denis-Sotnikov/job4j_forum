@@ -12,15 +12,28 @@ Spring Data JPA
 PostgreSQL
 Liquibase
 <br>
+<br>
 
 ![ScreenShot](img/add-new-post.png)
-<br>
+
+Форма добавления нового поста
+
 ![ScreenShot](img/add-new-topic.png)
-<br>
+
+Форма добавления нового топика
+
 ![ScreenShot](img/login-incorrect.png)
-<br>
+
+Неправильная аутентификация
+
 ![ScreenShot](img/logout.png)
-<br>
+
+Форма logout
+
 ![ScreenShot](img/main-page.png)
-<br>
+
+Главная страница
+
 ![ScreenShot](img/registration.png)
+
+Форма регистрации
