@@ -13,7 +13,7 @@ PostgreSQL
 Liquibase
 <br>
 
-![ScreenShot](img/add new post.png)
+![ScreenShot](img/add-new-post.png)
 <br>
 ![ScreenShot](img/add new topic.png)
 <br>
