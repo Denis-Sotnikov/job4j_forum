@@ -1,6 +1,14 @@
+
 insert into authorities(authority) values ('ROLE_USER');
 insert into authorities(authority) values ('ROLE_ADMIN');
-insert into users(username,enabled, password, authority_id) values ('root', true, '$2a$10$wY1twJhMQjGVxv4y5dBC5ucCBlzkzT4FIGa4FNB/pS9GaXC2wm9/W', 2);
 
-insert into posts (name) values ('О чем этот форум?');
-insert into posts (name) values ('Правила форума.');
+insert into users(password, username, enabled, authority_id)
+values ('$2a$10$1vJMqTELPtjRmBm6gtAyEug7/4EGKZQA6eWZypWZNlQncRqPqU/oS', 'root', true, 1);
+
+insert into topics(name, status, author_id) values('Продажа авто', 1, 1);
+
+insert into posts(created, description, name, creator_id, topic_id)
+values('2020-07-28 18:29:52.000000', 'Продам машину тойоту', 'Тойота', 1, 1);
+
+insert into posts(created, description, name, creator_id, topic_id)
+values('2020-07-29 21:53:30.545000', 'Продам Mercedes S600 за 5.7 млн рублей', 'Mercedes S600', 1, 1);
