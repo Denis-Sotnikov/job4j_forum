@@ -15,12 +15,12 @@ Liquibase
 
 ![ScreenShot](img/add-new-post.png)
 <br>
-![ScreenShot](img/add new topic.png)
+![ScreenShot](img/add-new-topic.png)
 <br>
-![ScreenShot](img/login incorrect.png)
+![ScreenShot](img/login-incorrect.png)
 <br>
 ![ScreenShot](img/logout.png)
 <br>
-![ScreenShot](img/main page.png)
+![ScreenShot](img/main-page.png)
 <br>
 ![ScreenShot](img/registration.png)
